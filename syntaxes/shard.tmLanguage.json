@@ -1,0 +1,161 @@
+{
+  "name": "Shard",
+  "scopeName": "source.shard",
+  "fileTypes": [
+    "shard",
+    "shd",
+    "sd"
+  ],
+  "patterns": [
+    {
+      "name": "comment.line.double-slash.shard",
+      "begin": "//",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.shard"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "match": ".*",
+          "name": "comment.line.double-slash.shard"
+        }
+      ]
+    },
+    {
+      "name": "comment.block.shard",
+      "begin": "/\\*",
+      "end": "\\*/",
+      "patterns": [
+        {
+          "match": ".",
+          "name": "comment.block.shard"
+        }
+      ]
+    },
+    {
+      "name": "meta.type.declaration.shard",
+      "match": "\\btype\\s+([A-Z][A-Za-z0-9_]*)\\b",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.shard"
+        }
+      }
+    },
+    {
+      "name": "storage.modifier.shard",
+      "match": "\\b(var|const|extern)\\b"
+    },
+    {
+      "name": "storage.type.shard",
+      "match": "\\b(func|struct|type|newtype|namespace)\\b"
+    },
+    {
+      "name": "keyword.control.shard",
+      "match": "\\b(if|elif|else|forever|while|until|for|break|continue|return)\\b"
+    },
+    {
+      "name": "keyword.operator.logical.shard",
+      "match": "\\b(and|or|not)\\b"
+    },
+    {
+      "name": "keyword.type.builtin.shard",
+      "match": "\\b(i8|i16|i32|i64|u8|u16|u32|u64|f32|f64|bool|voidptr| C_char|C_short|C_int|C_long|C_size| C_uchar|C_ushort|C_uint|C_ulong|C_usize|C_void)\\b"
+    },
+    {
+      "name": "keyword.preprocessor.shard",
+      "match": "@(include|macro|undef|message)"
+    },
+    {
+      "name": "keyword.operator.cast.shard",
+      "match": "\\bas\\b"
+    },
+    {
+      "name": "keyword.operator.sizeof.shard",
+      "match": "\\bsizeof\\b"
+    },
+    {
+      "name": "keyword.operator.assignment.shard",
+      "match": "<<=|>>=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^=|~=|="
+    },
+    {
+      "name": "keyword.operator.comparison.shard",
+      "match": "==|!=|<=|>=|<|>"
+    },
+    {
+      "name": "keyword.operator.bitwise.shard",
+      "match": "<<|>>|&|\\||\\^|~"
+    },
+    {
+      "name": "keyword.operator.arithmetic.shard",
+      "match": "(?<!\\+)\\+(?!\\+)|(?<!-)-(?!-)|\\*|/|%"
+    },
+    {
+      "name": "constant.numeric.hexadecimal.shard",
+      "match": "\\b0x[0-9a-fA-F]+\\b"
+    },
+    {
+      "name": "constant.numeric.binary.shard",
+      "match": "\\b0b[01]+\\b"
+    },
+    {
+      "name": "constant.numeric.octal.shard",
+      "match": "\\b0o[0-7]+\\b"
+    },
+    {
+      "name": "constant.numeric.float.shard",
+      "match": "\\b(?:\\d+\\.\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?\\b"
+    },
+    {
+      "name": "constant.numeric.integer.shard",
+      "match": "\\b\\d+(?![A-Za-z_])\\b"
+    },
+    {
+      "name": "constant.character.shard",
+      "begin": "'",
+      "end": "'",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.char.begin.shard"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.char.end.shard"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.shard",
+          "match": "\\\\[nrt0'\"\\\\]"
+        },
+        {
+          "name": "constant.character.value.shard",
+          "match": "[^\\']"
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.double.shard",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.shard"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.shard"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.shard",
+          "match": "\\\\."
+        }
+      ]
+    }
+  ]
+}

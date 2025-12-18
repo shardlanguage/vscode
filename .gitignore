@@ -1,0 +1,12 @@
+out/
+dist/
+build/
+node_modules
+.vscode-test/
+*.vsix
+*.log
+.vscode/
+.vscode-test/
+package-lock.json
+yarn.lock
+.env
